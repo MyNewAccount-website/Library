@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Download Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+	    overflow: hidden;
+            user-select: none;
+        }
+        .header {
+            width: 100%;
+            background-color: #008CBA;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+            margin-top: 80px; /* Space for header */
+        }
+        h1 {
+            text-align: center;
+            color: #008CBA;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #008CBA;
+            color: white;
+        }
+        tr {
+            cursor: pointer;
+        }
+        tr:hover {
+            background-color: #e1f5fe;
+        }
+        td a {
+            color: #008CBA;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        td a:hover {
+            color: #00bcd4;
+        }
+        @media (max-width: 600px) {
+            table, th, td {
+                font-size: 14px;
+                padding: 10px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            .header {
+                font-size: 20px;
+                padding: 12px;
+            }
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">MILibrary</div>
+    <div class="container">
+        <h1>Скачать книги</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Книги по программированию</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr onclick="confirmDownload('Свейгарт Э. - Учим Python, делая крутые игры (2018)', './Свейгарт Э. - Учим Python, делая крутые игры (2018).pdf')">
+                    <td><a href="#">Python</a></td>
+                </tr>
+                <tr onclick="confirmDownload('PowerShell для сисадминов 2021', './PowerShell для сисадминов 2021.pdf')">
+                    <td><a href="#">PowerShell</a></td>
+                </tr>
+                <tr onclick="confirmDownload('pdfcoffee.com_batch-script-bookpdf-2-pdf-free', 'pdfcoffee.com_batch-script-bookpdf-2-pdf-free.pdf')">
+                    <td><a href="#">Batch script</a></td>
+                </tr>
+                <tr onclick="confirmDownload('learning_c_programming', 'learning_c_programming.pdf')">
+                    <td><a href="#">C++</a></td>
+                </tr>
+                <tr onclick="confirmDownload('javascript-dlia-dietiei.-samouc-nik-morghan', 'javascript-dlia-dietiei.-samouc-nik-morghan.pdf')">
+                    <td><a href="#">JavaScript</a></td>
+                </tr>
+                <tr onclick="confirmDownload('Graham_D._Etichnyi_hacking', 'Graham_D._Etichnyi_hacking.pdf')">
+                    <td><a href="#">Ethical hacker</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function confirmDownload(bookTitle, fileName) {
+            if (confirm('Are you sure you want to download "' + bookTitle + '"?')) {
+                window.location.href = fileName;
+            }
+        }
+    </script>
+</body>
+</html>
